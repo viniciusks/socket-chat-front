@@ -30,6 +30,8 @@ $(document).ready(function(){
             $('.chat').append('<li class="self"><div class="msg"><span>' +
                 $('#nickname').val() + ':</span><p>' + text + '</p><time>' +
                 time.getHours() + ":" + time.getMinutes() + '</time></div></li>')
+            var $target = $('html,body'); 
+            $target.animate({scrollBottom: $target.height()}, 1000);
             socket.emit("send", text)
         }
     })
